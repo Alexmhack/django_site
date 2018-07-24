@@ -6,9 +6,6 @@
 
 {% block content %}
 	{% if user.is_authenticated %}
-		<div class="page-header">
-			<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-		</div>
 		{% if post %}
 			{% for post in posts %}
 				<div class='post'>
@@ -20,5 +17,7 @@
 		{% else %}
 			<h3>There are no draft posts. Create posts by clicking the plus icon.</h3>
 		{% endif %}
+	{% else %}
+		<p>You are not authorized to view this page.</p>
 	{% endif %}
 {% endblock content %}

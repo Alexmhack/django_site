@@ -59,3 +59,8 @@ def post_delete(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 	post.delete()
 	return redirect('post_list')
+
+
+def post_delete_view(request, pk):
+	post = get_object_or_404(Post, pk=pk)
+	return render(request, 'blog/post_delete_view.html', {'post': post})
