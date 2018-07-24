@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('blog.urls')),
     path('accounts/login/', views.login, name='login'),
-    path('accounts/login/', views.logout, name='logout', kwargs={'next_page': '/'}),
+    path('accounts/logout/', views.logout, name='logout', kwargs={'next_page': '/'}),
 ]
