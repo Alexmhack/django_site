@@ -11,10 +11,12 @@
 			<div class="date">
 				{{ post.published_date|date }}
 			</div>
+			<p>{{ post.text|linebreaksbr }}</p>
 			{% if user.is_authenticated %}
 				<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publish</a>
 			{% endif %}
-			<p>{{ post.text|linebreaksbr }}</p>
+		{% else %}
 		{% endif %}
 	</div>
 {% endblock %}
