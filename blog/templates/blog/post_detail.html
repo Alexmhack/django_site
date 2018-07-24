@@ -2,7 +2,7 @@
 
 {% block title %}
 	{{ post.title }}
-{% block title %}
+{% endblock %}
 
 {% block content %}
 	<div class="post">
@@ -11,6 +11,7 @@
 			<div class="date">
 				{{ post.published_date|date }}
 			</div>
+			<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
 			<p>{{ post.text|linebreaksbr }}</p>
 		{% endif %}
 	</div>
